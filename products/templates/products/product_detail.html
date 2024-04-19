@@ -3,10 +3,12 @@
 {% block content %}
 <h1>상품 상세</h1>
 <h3>{{ product.title }}</h3>
-<p>{{ product.created_at }}</p>
+<p>조회수: {{ product.views }}</p>
+<p>작성일: {{ product.created_at }}</p>
+<p>가격: {{ product.price }} &#8361;</p>
 <img style="width:50%" src="{% static 'products/product.jpg' %}">
 <p>{{ product.content }}</p>
-<a>수정</a>
+<a href="{% url 'products:update' product.pk %}">수정</a>
 <form action="{% url 'products:delete' product.pk %}" method="POST">
   {% csrf_token %}
   <button type="submit">삭제</button>

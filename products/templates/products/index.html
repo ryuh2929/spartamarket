@@ -2,11 +2,11 @@
 {% block content %}
 <h1>상품 목록</h1>
 {% for product in products %}
-    <a>[ {{ product.id }} ]</a>
-    <a href="{% url 'products:product_detail' product.id %}">{{ product.title }}</a>
-    <hr>
+<a>[ {{ product.id }} ]</a>
+<a href="{% url 'products:product_detail' product.id %}">{{ product.title }}</a>
+<hr>
 {% endfor %}
 
 <a href="{% url 'index' %}">이동</a>
-<a href="{% url 'products:new' %}">상품 등록</a>
+<a href="{% url 'products:create' %}">상품 등록</a>
 {% endblock content %}

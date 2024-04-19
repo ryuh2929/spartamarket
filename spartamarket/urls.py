@@ -23,4 +23,5 @@ urlpatterns = [
     path('', views.index, name="index"),
     path('accounts/', include("accounts.urls")),
     path('products/', include("products.urls")),
+    path('follows/', include("follows.urls")),
 ]
