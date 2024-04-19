@@ -6,8 +6,6 @@ from django.contrib.auth import update_session_auth_hash
 from django.views.decorators.http import require_POST, require_http_methods
 from .forms import CustomUserChangeForm
 
-def index(request):
-  return render(request, "accounts/index.html")
 
 def login(request):
   if request.method == "POST":

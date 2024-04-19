@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>새 상품 등록</h1>
+<form action="{% url 'products:create' %}" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">등록</button>
+</form>
+<a href="{% url 'index' %}">취소</a>
+{% endblock content %}
